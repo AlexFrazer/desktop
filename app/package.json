@@ -1,0 +1,7 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "main": "renderer.js",
+  "author": "Alex Frazer <alexadfrazer@gmail.com>",
+  "license": "UNLICENSED"
+}
