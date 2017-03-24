@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "desktop",
   "version": "1.0.0",
   "main": "renderer.js",
   "author": "Alex Frazer <alexadfrazer@gmail.com>",

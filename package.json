@@ -5,9 +5,13 @@
   "license": "MIT",
   "scripts": {
     "start-hot": "cross-env HOT=1 NODE_ENV=development electron -r babel-polyfill -r babel-register ./app/renderer",
-    "hot-server": "cross-env NODE_ENV=development node -r babel-register -r babel-polyfill ./node_modules/webpack-dev-server/bin/webpack-dev-server",
-    "dev": "cross-env START_HOT=1 npm run hot-server",
-    "build": "NODE_ENV=production node -r babel-register -r babel-polyfill ./node_modules/.bin/webpack"
+    "dev": "cross-env NODE_ENV=development node -r babel-polyfill -r babel-register ./node_modules/webpack-dev-server/bin/webpack-dev-server",
+    "build": "NODE_ENV=production node -r babel-register -r babel-polyfill ./node_modules/.bin/webpack",
+    "package": "rimraf release/ && electron-packager dist/ --out release",
+    "release": "npm run build && npm run package"
+  },
+  "bin": {
+    "electron": "./node_modules/.bin/electron"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -24,10 +28,13 @@
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^3.1.4",
     "electron": "^1.6.1",
+    "electron-builder": "^16.3.0",
+    "electron-packager": "^8.6.0",
     "electron-prebuilt": "^1.4.13",
     "flow-bin": "^0.42.0",
     "flow-runtime": "^0.10.0",
     "react-hot-loader": "3.0.0-beta.6",
+    "rimraf": "^2.6.1",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1",
     "webpack-html-plugin": "^0.1.1",

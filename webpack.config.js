@@ -71,12 +71,10 @@ const devConfig = merge(baseConfig, {
     contentBase: buildPath,
     historyApiFallback: true,
     setup(app) {
-      if (process.env.START_HOT) {
-        const environment = { ...process.env, PORT };
-        spawn('npm', ['run', 'start-hot'], { shell: true, env: environment, stdio: 'inherit' })
-          .on('close', code => process.exit(code))
-          .on('error', spawnError => console.error(spawnError));
-      }
+      const environment = { ...process.env, PORT };
+      spawn('npm', ['run', 'start-hot'], { shell: true, env: environment, stdio: 'inherit' })
+        .on('close', code => process.exit(code))
+        .on('error', spawnError => console.error(spawnError));
     }
   },
 });

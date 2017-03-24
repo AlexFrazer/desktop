@@ -1,0 +1,25 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "node": 7,
+        "chrome": 52,
+        "electron": "1.4"
+      },
+      "useBuiltIns": true
+    }],
+    "stage-2",
+    "react"
+  ],
+  "plugins": ["dynamic-import-webpack"],
+  "env": {
+    "production": {
+      "presets": ["react-optimize"]
+    },
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
+    }
+  }
+}
